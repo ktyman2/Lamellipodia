@@ -1,0 +1,12 @@
+#!/bin/bash
+# FILENAME:  run.sub
+#SBATCH  --nodes=1
+#SBATCH  --ntasks-per-node=16
+#SBATCH  --time=4:00:00
+#SBATCH	 --no-requeue
+#SBATCH  -A kimty
+
+module load gcc
+module load openmpi/4.0.5
+
+mpirun -n 16 ./main
